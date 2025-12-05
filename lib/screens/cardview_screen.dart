@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_for_college/widgets/card-widget.dart';
 
 class CardViewScreen extends StatelessWidget {
   const CardViewScreen({super.key});
@@ -10,12 +11,7 @@ class CardViewScreen extends StatelessWidget {
         title: const Text('CardView'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: const Center(
-        child: Text(
-          'cardview',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      body: CardWidget(firstName: 'Bob', lastName: 'Snow', city: 'City'),
     );
   }
 }

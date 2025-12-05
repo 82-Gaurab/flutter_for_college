@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_for_college/common/listview_widget.dart';
 import '../models/student_model.dart';
 import 'output_screen.dart';
 
@@ -16,7 +17,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
 
   String? _selectedCity;
 
-  final List<StudentModel> _lstStudents = [];
+  final List<StudentModel> lstStudents = [];
 
   // To display list of cities in dropdown
   final List<DropdownMenuItem<String>> _cities = [
@@ -123,7 +124,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                           );
 
                           setState(() {
-                            _lstStudents.add(student);
+                            lstStudents.add(student);
                           });
                         }
                       },
@@ -146,7 +147,8 @@ class _ListViewScreenState extends State<ListViewScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const OutputScreen(),
+                            builder: (context) =>
+                                OutputScreen(lstStudents: lstStudents),
                           ),
                         );
                       },
@@ -166,45 +168,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
               ),
               const SizedBox(height: 40),
 
-              if (_lstStudents.isNotEmpty) ...{
-                ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: _lstStudents.length,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    final student = _lstStudents[index];
-                    return Card(
-                      margin: EdgeInsets.symmetric(vertical: 8),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          child: Text(student.fname[0].toUpperCase()),
-                        ),
-                        title: Text("${student.fname} ${student.lname}"),
-                        subtitle: Text(student.city),
-                        trailing: Wrap(
-                          spacing: 12,
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  _lstStudents.removeAt(index);
-                                });
-                              },
-                              icon: Icon(Icons.delete, color: Colors.red),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              } else ...{
-                Text(
-                  "No Data",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 24, color: Colors.grey.shade400),
-                ),
-              },
+              ListViewWidget(lstStudent: lstStudents),
             ],
           ),
         ),
