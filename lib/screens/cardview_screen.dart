@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_for_college/widgets/card-widget.dart';
+import 'package:flutter_for_college/widgets/card_widget.dart';
 
 class CardViewScreen extends StatelessWidget {
   const CardViewScreen({super.key});
