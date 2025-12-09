@@ -15,23 +15,22 @@ class CardWidget extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(16),
         ),
-        elevation: 8,
-        color: Colors.amber,
+        color: Colors.red[400],
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "First Name: ${student.fname}",
-                style: TextStyle(fontSize: 24, color: Colors.grey.shade800),
+                style: TextStyle(fontSize: 24, color: Colors.white),
               ),
               Text(
                 "Last Name: ${student.lname}",
-                style: TextStyle(fontSize: 24, color: Colors.grey.shade800),
+                style: TextStyle(fontSize: 24, color: Colors.white),
               ),
               Text(
                 "City: New ${student.city}",
-                style: TextStyle(fontSize: 24, color: Colors.grey.shade800),
+                style: TextStyle(fontSize: 24, color: Colors.white),
               ),
             ],
           ),

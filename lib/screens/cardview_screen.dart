@@ -7,6 +7,21 @@ class CardViewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<StudentModel> _lstStudent = [
+      StudentModel(fname: "Flash", lname: "Bob", city: "Africa"),
+      StudentModel(fname: "Batman", lname: "Pahadi", city: "Nepal"),
+      StudentModel(fname: "Bob", lname: "The Don", city: "China"),
+      StudentModel(fname: "Flash", lname: "Bob", city: "Africa"),
+      StudentModel(fname: "Batman", lname: "Pahadi", city: "Nepal"),
+      StudentModel(fname: "Bob", lname: "The Don", city: "China"),
+      StudentModel(fname: "Flash", lname: "Bob", city: "Africa"),
+      StudentModel(fname: "Batman", lname: "Pahadi", city: "Nepal"),
+      StudentModel(fname: "Bob", lname: "The Don", city: "China"),
+      StudentModel(fname: "Flash", lname: "Bob", city: "Africa"),
+      StudentModel(fname: "Batman", lname: "Pahadi", city: "Nepal"),
+      StudentModel(fname: "Bob", lname: "The Don", city: "China"),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('CardView'),
@@ -14,31 +29,13 @@ class CardViewScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            CardWidget(
-              student: StudentModel(
-                fname: "Flash",
-                lname: "Bob",
-                city: "Africa",
-              ),
-            ),
-            CardWidget(
-              student: StudentModel(
-                fname: "Batman",
-                lname: "Pahadi",
-                city: "Nepal",
-              ),
-            ),
-            CardWidget(
-              student: StudentModel(
-                fname: "Bob",
-                lname: "The Don",
-                city: "China",
-              ),
-            ),
-          ],
+        child: ListView.builder(
+          physics: BouncingScrollPhysics(),
+          itemCount: _lstStudent.length,
+          itemBuilder: (BuildContext context, int index) {
+            StudentModel student = _lstStudent[index];
+            return CardWidget(student: student);
+          },
         ),
       ),
     );
