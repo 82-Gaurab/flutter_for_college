@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_for_college/models/student_model.dart';
 
 class CardWidget extends StatelessWidget {
-  const CardWidget({
-    super.key,
-    required this.firstName,
-    required this.lastName,
-    required this.city,
-  });
+  const CardWidget({super.key, required this.student});
 
-  final String firstName;
-  final String lastName;
-  final String city;
+  final StudentModel student;
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +22,15 @@ class CardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "First Name: $firstName",
+                "First Name: ${student.fname}",
                 style: TextStyle(fontSize: 24, color: Colors.grey.shade800),
               ),
               Text(
-                "Last Name: $lastName",
+                "Last Name: ${student.lname}",
                 style: TextStyle(fontSize: 24, color: Colors.grey.shade800),
               ),
               Text(
-                "City: New $city",
+                "City: New ${student.city}",
                 style: TextStyle(fontSize: 24, color: Colors.grey.shade800),
               ),
             ],
