@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_for_college/screens/employee_details_screen.dart';
+import 'package:flutter_for_college/screens/image_screen.dart';
 import 'listview_screen.dart';
 import 'gridview_screen.dart';
 import 'cardview_screen.dart';
@@ -140,6 +141,27 @@ class DashboardScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => EmployeeDetailsScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 20),
+                      _buildDashboardCard(
+                        context,
+                        title: "Image",
+                        subtitle: "Explore image view",
+                        icon: Icons.people,
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.deepOrange.shade400,
+                            Colors.deepOrange.shade600,
+                          ],
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ImageScreen(),
                             ),
                           );
                         },
