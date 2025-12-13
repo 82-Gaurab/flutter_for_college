@@ -65,6 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           int.parse(_firstNoController.text) +
                           int.parse(_secondNoController.text);
                       result = "$sum";
+                      _firstNoController.text = "";
+                      _secondNoController.text = "";
                     });
                   }
                 },

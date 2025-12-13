@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Apps for College',
       debugShowCheckedModeBanner: false,
       theme: getApplicationTheme(),
-      home: const DashboardScreen(),
+      home: const BottomNavigationScreen(),
     );
   }
 }

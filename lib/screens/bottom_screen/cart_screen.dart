@@ -79,6 +79,9 @@ class _CartScreenState extends State<CartScreen> {
                           double.parse(_timeController.text) /
                           100;
                       result = "$si";
+                      _principleController.text = "";
+                      _rateController.text = "";
+                      _timeController.text = "";
                     });
                   }
                 },

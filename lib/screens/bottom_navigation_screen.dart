@@ -41,10 +41,6 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'About'),
         ],
 
-        backgroundColor: Colors.amber.shade400,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.black,
-
         currentIndex: _selectedIndex,
         onTap: (index) {
           setState(() {

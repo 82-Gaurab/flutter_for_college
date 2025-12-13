@@ -18,5 +18,17 @@ ThemeData getApplicationTheme() {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       ),
     ),
+    appBarTheme: AppBarThemeData(backgroundColor: Colors.red[400]),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.amber.shade400,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.black,
+    ),
+    scaffoldBackgroundColor: Colors.grey[200],
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+      filled: true,
+      fillColor: Colors.grey.shade50,
+    ),
   );
 }
